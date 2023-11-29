@@ -13,7 +13,7 @@ body {
 .card {
     width: 90%;
     max-width: 470px;
-    background: linear-gradient(45deg, rgb(50, 190, 236), rgb(251, 178, 178));
+    background: linear-gradient(45deg, rgb(29, 167, 212), rgb(210, 107, 193));
     color: white;
     margin: 100px auto 0px;
     border-radius: 20px;
@@ -105,4 +105,28 @@ body {
     justify-content: space-between;
     padding: 0 20px;
     /* margin-top: 50px; */
+}
+
+.humidity {
+    margin-right: 10px;
+    text-align: right;
+}
+
+.windspeed {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.col{
+    margin-top: 30px;
+    display: flex;
+    align-items: left;
+}
+
+.col img {
+    height: 40px;
+    width: 40px;
+    border-radius: 14px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
