@@ -9,16 +9,29 @@ let weatherImage = document.querySelector(".weather-image");
 
 const checkWeather = async (city) => {
     const response = await fetch(apiUrl + "&q=" + city);
-    let data = await response.json();
 
-    console.log(data);
+    if(response.status == 404) {
+        document.querySelector(".error").style.display = "flex";
+        document.querySelector(".weather").style.display = "none";
+    }
 
-    document.querySelector(".city").innerHTML = data.name;
-    document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + " ºC";
-    document.querySelector(".humidity").innerHTML = data.main.humidity + " %";
-    document.querySelector(".wind").innerHTML = data.wind.speed + " Km/h";
-    document.querySelector(".weather-status p").innerHTML = data.weather[0].main;
-    weatherImage.src = "images/" + (data.weather[0].main).toLowerCase() + ".jpeg";
+    else {
+
+        let data = await response.json();
+    
+        console.log(data);
+    
+        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + " ºC";
+        document.querySelector(".humidity").innerHTML = data.main.humidity + " %";
+        document.querySelector(".wind").innerHTML = data.wind.speed + " Km/h";
+        document.querySelector(".weather-status p").innerHTML = data.weather[0].main;
+        weatherImage.src = "images/" + (data.weather[0].main).toLowerCase() + ".jpeg";
+    
+        document.querySelector(".weather").style.display = "flex";
+        document.querySelector(".error").style.display="none";
+    }
+
 }
 
 

@@ -13,12 +13,16 @@ body {
 .card {
     width: 90%;
     max-width: 470px;
-    background: linear-gradient(45deg, rgb(29, 167, 212), rgb(210, 107, 193));
+    
     color: white;
     margin: 100px auto 0px;
     border-radius: 20px;
     padding: 20px 30px;
     text-align: center;
+}
+
+#card {
+    background: linear-gradient(45deg, rgb(29, 167, 212), rgb(210, 107, 193));
 }
 
 .search {
@@ -129,4 +133,13 @@ body {
     border-radius: 14px;
     margin-left: 8px;
     margin-right: 8px;
+}
+
+.weather {
+    display: none;
+}
+
+.error {
+    display:none;
+    color: linear-gradient(45deg, rgb(243, 97, 97), rgb(128, 237, 222));
 }
